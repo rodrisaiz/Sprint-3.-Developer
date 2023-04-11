@@ -9,6 +9,42 @@
  * '/' => 'index#index',
  * '/calendar' => 'calendar#index'
  */
+
 $routes = array(
-	'/test' => 'test#index'
+	'/' => 'user#index',
+	'/login' => 'user#login',
+	'/signup' => 'user#signup',
+	'/error' => 'user#error',
+	'/test' => 'user#test',
+
+
+	'/test3' => 'task#index',
+	'/test4' => 'task#check',
+
 );
+
+/*$routes = array(
+
+	'/' => 'login#index',
+	'/loginerror' => 'login#error',
+	'/login' => 'login#login',
+	'/signuphome' => 'signup#index',
+	'/signup' => 'signup#signup',
+	'/home' => 'home#home',
+	'/task' => 'task#taskup',
+	'/taskhome' => 'task#index',
+	'/taskedithome' => 'task#edithome',
+	'/taskedit' => 'task#edit',
+	'/user' => 'user#index',
+	'/modifyuser' => 'user#userModify',
+	'/deleteuser' => 'user#delete',
+	'/deleteuser' => 'user#delete',
+	
+
+// the following are just test
+	'/test' => 'test#index',
+	'/testa' => 'test#check',
+	'/rodri' => 'rodri#index'
+
+);
+*/
