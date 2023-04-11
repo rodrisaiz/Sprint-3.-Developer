@@ -9,11 +9,13 @@ class UserController extends ApplicationController
 		//$this->view->message = "hello from User::index";
 	}
 
+	
 	public function loginAction()
 	{
 		return $this->view;
 		
 	}
+
 
 	public function signupAction()
 	{
@@ -27,19 +29,8 @@ class UserController extends ApplicationController
 		}else{
 			echo "error";
 		}
-
-		
-		
+			
 	}
 
-	public function checkAction()
-	{
-		echo "hello from User::check";
-	}
 
-	public function errorAction()
-	{
-		
-
-	}
 }
