@@ -9,16 +9,41 @@
 <body>
 
 
-<form action="/web/login">
+<form action="/web/login" method="post">
 
-  <label for="Login" method="post">Login</label><br><br>
+  <label for="Login">Login</label><br><br>
 
-  <label for="username">User name:</label><br>
-  <input type="text" id="uid" name="uid" value=""><br>
+  <label for="email">Email:</label><br>
+  <input type="text" id="email" name="email" value=""><br>
   <label for="password">Password:</label><br>
-  <input type="text" id="pw" name="pw" value=""><br><br>
+  <input type="text" id="pwd" name="pwd" value=""><br><br>
 
   <button type="submit" name="submit">Login</button>
+
+  <?php
+  
+if(!isset($_GET['error'])){
+  exit();
+
+}else{
+
+    $errorCheck = $_GET['error'];
+
+    if($errorCheck == "notExistingEmail"){
+
+      echo "<p> The email do not its registered. Please try again!</p>";   
+
+    }elseif($errorCheck == "autentication"){
+
+      echo "<p> Wrong password. Please try again! </p>";
+
+    }
+
+}
+
+
+?>
+
 
 
   <br>
@@ -65,7 +90,7 @@ if(!isset($_GET['error'])){
 
       echo "<p> You have used some invalid character for the username. Please try again! </p>";
 
-    }elseif($errorCheck == "ivalidEmail"){
+    }elseif($errorCheck == "invalidEmail"){
 
       echo "<p> You have used some invalid character for the email. Please try again! </p>";
   

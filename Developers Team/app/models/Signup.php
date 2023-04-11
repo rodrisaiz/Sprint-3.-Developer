@@ -8,13 +8,13 @@ class Signup extends DB{
     private $pwdrepeat;
     private $email;
 
-    public function __construct($uid2, $pwd2, $pwdrepeat2, $email2)
+    public function __construct($uid, $pwd, $pwdrepeat, $email)
     {
 
-        $this->uid = $uid2;
-        $this->pwd = $pwd2;
-        $this->pwdrepeat = $pwdrepeat2;
-        $this->email = $email2;
+        $this->uid = $uid;
+        $this->pwd = $pwd;
+        $this->pwdrepeat = $pwdrepeat;
+        $this->email = $email;
         
     }
 
@@ -31,9 +31,9 @@ class Signup extends DB{
 
             return header('Location:/web/?error=invalidUid');
 
-        }elseif($this->ivalidEmail() == false){
+        }elseif($this->invalidEmail() == false){
 
-            return header('Location:/web/?error=ivalidEmail');
+            return header('Location:/web/?error=invalidEmail');
 
         }elseif($this->pwdMatch() == false){
 
@@ -89,7 +89,7 @@ class Signup extends DB{
 
 
 
-    private function ivalidEmail()
+    private function invalidEmail()
     {
         $result;
 
@@ -165,7 +165,7 @@ class Signup extends DB{
             'id_user' => $id_user,
             'userName' => $this->uid,
             'email' => $this->email,
-            'pw' => password_hash($this->pwd, PASSWORD_BCRYPT),
+            'pwd' => password_hash($this->pwd, PASSWORD_BCRYPT),
             'tareas' => $tareas,
             
             );

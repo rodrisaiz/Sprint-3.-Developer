@@ -9,14 +9,6 @@ class UserController extends ApplicationController
 		//$this->view->message = "hello from User::index";
 	}
 
-	
-	public function loginAction()
-	{
-		return $this->view;
-		
-	}
-
-
 	public function signupAction()
 	{
 
@@ -25,6 +17,23 @@ class UserController extends ApplicationController
 			$signup = new Signup($_POST["uid"], $_POST["pwd"], $_POST["pwdrepeat"], $_POST["email"]);
 
 			$signup->signup();
+			
+		}else{
+			echo "error";
+		}
+			
+	}
+
+
+	public function loginAction()
+	{
+
+		if(isset($_POST["submit"])){
+
+			$login = new Login($_POST["email"], $_POST["pwd"]);
+
+			$login->login();
+			//$login->login();
 			
 		}else{
 			echo "error";
