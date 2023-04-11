@@ -48,6 +48,44 @@
 
 </form> 
 
+<?php
+  
+if(!isset($_GET['error'])){
+  exit();
+
+}else{
+
+    $errorCheck = $_GET['error'];
+
+    if($errorCheck == "emotyInputs"){
+
+      echo "<p> You have leave some empty fields. Please try again! </p>";   
+
+    }elseif($errorCheck == "invalidUid"){
+
+      echo "<p> You have used some invalid character for the username. Please try again! </p>";
+
+    }elseif($errorCheck == "ivalidEmail"){
+
+      echo "<p> You have used some invalid character for the email. Please try again! </p>";
+  
+    }elseif($errorCheck == "pwdMatch"){
+
+      echo "<p> You password and repeat password does not match. Please try again! </p>";
+
+
+    }elseif($errorCheck == "existingEmail"){
+
+      echo "<p> This email it´s already in use. Please login! </p>";
+
+
+    }
+
+}
+
+
+?>
+
 
     
 </body>

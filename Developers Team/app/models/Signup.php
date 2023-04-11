@@ -8,7 +8,8 @@ class Signup extends DB{
     private $pwdrepeat;
     private $email;
 
-    public function __construct($uid2, $pwd2, $pwdrepeat2, $email2){
+    public function __construct($uid2, $pwd2, $pwdrepeat2, $email2)
+    {
 
         $this->uid = $uid2;
         $this->pwd = $pwd2;
@@ -17,40 +18,40 @@ class Signup extends DB{
         
     }
 
+    //Sign Up function that calls all the validations and Set User functions 
+
     public function signup()
     {
         
         if($this->emotyInputs() == false){
 
-            return header('Location:/web/error?error=emotyInputs');
+            return header('Location:/web/?error=emotyInputs');
 
         }elseif($this->invalidUid() == false){
 
-            return header('Location:/web/error?error=invalidUid');
-
+            return header('Location:/web/?error=invalidUid');
 
         }elseif($this->ivalidEmail() == false){
 
-            return header('Location:/web/error?error=ivalidEmail');
+            return header('Location:/web/?error=ivalidEmail');
 
         }elseif($this->pwdMatch() == false){
 
-            return header('Location:/web/error?error=pwdMatch');
-
-        }elseif($this->checkUser() == false){
-
-            return header('Location:/web/error?error=checkUser');
+            return header('Location:/web/?error=pwdMatch');
 
         }elseif($this->existingEmail() == false){
 
-            return header('Location:/web/error?error=existingEmail');
+            return header('Location:/web/?error=existingEmail');
 
         }else{
            
             $this->setUser();
 
         }
+
     }
+
+    //Validations functions 
 
     private function emotyInputs()
     {
@@ -69,6 +70,7 @@ class Signup extends DB{
     }
 
 
+
     private function invalidUid()
     {
         $result;
@@ -83,8 +85,9 @@ class Signup extends DB{
         }
 
         return $result;
-
     }
+
+
 
     private function ivalidEmail()
     {
@@ -100,9 +103,9 @@ class Signup extends DB{
         }
 
         return $result;
-
-
     }
+
+
 
     private function pwdMatch()
     {
@@ -118,34 +121,10 @@ class Signup extends DB{
         }
 
         return $result;
-
-
     }
 
 
-    private function checkUser()
-    {
-        $result  = true;
-        $username;
-        $email;
 
-        foreach($this->read() as $user){  
-
-            $username = $user["username"]; 
-
-            $email = $user["email"]; 
-
-        
-            if($this->uid !== $username || $this->email !== $email){
-
-                $resutl = false;
-
-            }
-        }
-
-        return $result;
-
-    }
 
     private function existingEmail()
     {
@@ -162,20 +141,17 @@ class Signup extends DB{
         }
         
         return $result;
-
-
     }
 
 
-
+    //Set-user it´is the function in charge to save a new user in the DB
 
     public function setUser(){
 
 
         $user = array();
         $id_user = "";
-        $tareas = array();
-            
+        $tareas = array();     
        
 
         $decoded_json = $this->read();
@@ -189,7 +165,7 @@ class Signup extends DB{
             'id_user' => $id_user,
             'userName' => $this->uid,
             'email' => $this->email,
-            'pw' => $this->pwd,
+            'pw' => password_hash($this->pwd, PASSWORD_BCRYPT),
             'tareas' => $tareas,
             
             );
@@ -199,10 +175,8 @@ class Signup extends DB{
         $write = $this->write($decoded_json);
 
         header('Location: /web/');
-
         
     }
-
 
 }
 
