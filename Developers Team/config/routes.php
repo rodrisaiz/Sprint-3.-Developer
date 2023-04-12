@@ -12,8 +12,8 @@
 
 $routes = array(
 	'/' => 'user#index',
-	'/login' => 'user#login',
 	'/signup' => 'user#signup',
+	'/login' => 'user#login',
 	'/error' => 'user#error',
 	'/test' => 'user#test',
 
