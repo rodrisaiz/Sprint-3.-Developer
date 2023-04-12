@@ -2,8 +2,24 @@
     {
         "id_user": 1,
         "userName": "Rodri",
-        "email": "therustywhitebison@gmail.com",
-        "pwd": "$2y$10$NNGNOj2VFKrUHqEjL1Exuu4BIgzHvAVdVlk\/SYY5ZCIjYSeW88dcS",
-        "tareas": []
+        "email": "1@gmail.com",
+        "pwd": "$2y$10$Er9hD1u8mP24jkn3CDkyae.z9UKeWDccyNpHlULAQ0cRjf222Y2Mm",
+        "tasks": [
+            {
+                "title": "Test task 1",
+                "description": "Test desciption 1",
+                "status": "In progress",
+                "start_date": "2023-01-11",
+                "end_date": "2023-01-15"
+            },
+            {
+                "title": "Test task 2",
+                "description": "Test desciption 2",
+                "status": "In progress",
+                "start_date": "2023-01-11",
+                "end_date": "2023-01-15"
+            }
+            
+        ]
     }
 ]

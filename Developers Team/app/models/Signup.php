@@ -151,7 +151,7 @@ class Signup extends DB{
 
         $user = array();
         $id_user = "";
-        $tareas = array();     
+        $tasks = array();     
        
 
         $decoded_json = $this->read();
@@ -166,13 +166,17 @@ class Signup extends DB{
             'userName' => $this->uid,
             'email' => $this->email,
             'pwd' => password_hash($this->pwd, PASSWORD_BCRYPT),
-            'tareas' => $tareas,
+            'tasks' => $tasks,
             
             );
 
         $decoded_json[$finalPosition] = $user;
 
         $write = $this->write($decoded_json);
+
+        session_start();
+
+        $_SESSION["id"] =  $id_user;
 
         header('Location: /web/home');
         

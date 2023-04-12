@@ -15,9 +15,8 @@ $routes = array(
 	'/signup' => 'user#signup',
 	'/register' => 'user#register',
 	'/login' => 'user#login',
-	'/error' => 'user#error',
-	'/test' => 'user#test',
-
+	'/home' => 'task#home',
+	
 
 	'/test3' => 'task#index',
 	'/test4' => 'task#check',
@@ -46,6 +45,15 @@ $routes = array(
 	'/test' => 'test#index',
 	'/testa' => 'test#check',
 	'/rodri' => 'rodri#index'
+
+
+	home -> show all the tasks of that user 
+
+	Title
+	Description
+	Estatus
+	Start date
+	End date
 
 );
 */

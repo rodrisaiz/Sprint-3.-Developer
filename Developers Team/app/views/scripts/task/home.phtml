@@ -1,0 +1,88 @@
+<?php
+$task = $this->_data["_data"];
+$countTask = count($task);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+
+<h1> Tasks list!!</h1>
+
+                <br>
+                <br>
+                <br>
+                <br>
+        <?php
+            
+            for ($i = 0; $i <= ($countTask - 1); $i++) {
+              $contador = $i;
+              ?>
+             
+
+
+             <h2>Title</h2>
+                  <?php echo $task[$i]["title"]; ?>
+                
+            <h2>Description</h2>
+                
+                  <?php echo $task[$i]["description"]; ?>
+            
+            <h2>Status</h2>
+
+                  <?php echo $task[$i]["status"]; ?>
+            
+            <h2>Start date</h2>  
+                  <?php echo $task[$i]["start_date"]; ?>
+            
+            <h2>End date</h2>
+                
+                  <?php echo $task[$i]["end_date"]; ?>
+
+            <h2>Counter</h2>
+            <a href="/web/taskedithome?item=<?php echo $contador; ?>"
+                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                    Edit
+                  </a>
+
+
+                <br>
+                <br>
+                <br>
+                <br>
+
+              <?php
+            }
+        ?>
+
+<form action="/web/register">
+
+<br>
+<br>
+<br>
+
+<p> If you wanna add a new task click here ! ↓↓↓</p>
+<button type="submit" name="submit">Add task!</button>
+
+
+</form> 
+
+<form action="/web/register">
+
+  <br>
+  <br>
+  <br>
+
+<p> If you wanna edit your profile click here! ↓↓↓</p>
+<button type="submit" name="submit">Edit your profile!</button>
+
+  
+</form> 
+    
+</body>
+</html>
