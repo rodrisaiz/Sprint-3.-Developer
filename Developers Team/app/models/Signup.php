@@ -25,23 +25,23 @@ class Signup extends DB{
         
         if($this->emotyInputs() == false){
 
-            return header('Location:/web/?error=emotyInputs');
+            return header('Location:/web/register?error=emotyInputs&uid='.$this->uid.'&email='.$this->email.'');
 
         }elseif($this->invalidUid() == false){
 
-            return header('Location:/web/?error=invalidUid');
+            return header('Location:/web/register?error=invalidUid&email='.$this->email.'');
 
         }elseif($this->invalidEmail() == false){
 
-            return header('Location:/web/?error=invalidEmail');
+            return header('Location:/web/register?error=invalidEmail&uid='.$this->uid.'');
 
         }elseif($this->pwdMatch() == false){
 
-            return header('Location:/web/?error=pwdMatch');
+            return header('Location:/web/register?error=pwdMatch&uid='.$this->uid.'&email='.$this->email.'');
 
         }elseif($this->existingEmail() == false){
 
-            return header('Location:/web/?error=existingEmail');
+            return header('Location:/web/register?error=existingEmail&uid='.$this->uid.'');
 
         }else{
            
@@ -174,7 +174,7 @@ class Signup extends DB{
 
         $write = $this->write($decoded_json);
 
-        header('Location: /web/');
+        header('Location: /web/home');
         
     }
 

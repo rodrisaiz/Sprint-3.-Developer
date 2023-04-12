@@ -1,3 +1,9 @@
 [
-    
+    {
+        "id_user": 1,
+        "userName": "Rodri",
+        "email": "therustywhitebison@gmail.com",
+        "pwd": "$2y$10$NNGNOj2VFKrUHqEjL1Exuu4BIgzHvAVdVlk\/SYY5ZCIjYSeW88dcS",
+        "tareas": []
+    }
 ]

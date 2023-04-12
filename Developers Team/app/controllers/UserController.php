@@ -9,6 +9,13 @@ class UserController extends ApplicationController
 		//$this->view->message = "hello from User::index";
 	}
 
+	public function registerAction()
+	{
+		return $this->view;
+		
+		
+	}
+
 	public function signupAction()
 	{
 
