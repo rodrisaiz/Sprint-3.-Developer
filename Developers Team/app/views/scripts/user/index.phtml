@@ -14,7 +14,20 @@
   <label for="Login">Login</label><br><br>
 
   <label for="email">Email:</label><br>
-  <input type="text" id="email" name="email" value=""><br>
+  <?php
+  
+  if(isset($_GET['email'])){
+    $email = $_GET['email'];
+
+    echo '<input type="text" id="email" name="email" value="'.$email.'"><br>';
+
+  }else{
+
+    echo '<input type="text" id="email" name="email" value=""><br>';
+  }
+
+  ?>
+  
   <label for="password">Password:</label><br>
   <input type="text" id="pwd" name="pwd" value=""><br><br>
 
@@ -31,7 +44,7 @@ if(!isset($_GET['error'])){
 
     if($errorCheck == "notExistingEmail"){
 
-      echo "<p> The email do not its registered. Please try again!</p>";   
+      echo "<p> The email do not its registered. Please sign up!</p>";   
 
     }elseif($errorCheck == "autentication"){
 
@@ -45,71 +58,20 @@ if(!isset($_GET['error'])){
 ?>
 
 
-
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
 </form> 
 
 
-<form action="/web/signup" method="post">
+<form action="/web/register">
 
-  <label for="Singup" >Sing Up</label><br><br>
+  <br>
+  <br>
+  <br>
 
-  <label for="uid">User name:</label><br>
-  <input type="text" id="uid" name="uid" ><br>
-  <label for="email">Email:</label><br>
-  <input type="text" id="email" name="email" value=""><br>
-  <label for="pwd">Password:</label><br>
-  <input type="text" id="pwd" name="pwd" value=""><br>
-  <label for="pwdrepeat">Repeat Password:</label><br>
-  <input type="text" id="pwdrepeat" name="pwdrepeat" value=""><br><br>
+<p> If you are not registered click here! ↓↓↓</p>
+<button type="submit" name="submit">Sign Up!</button>
 
-  <button type="submit" name="submit">SIGNUP</button>
 
 </form> 
-
-<?php
-  
-if(!isset($_GET['error'])){
-  exit();
-
-}else{
-
-    $errorCheck = $_GET['error'];
-
-    if($errorCheck == "emotyInputs"){
-
-      echo "<p> You have leave some empty fields. Please try again! </p>";   
-
-    }elseif($errorCheck == "invalidUid"){
-
-      echo "<p> You have used some invalid character for the username. Please try again! </p>";
-
-    }elseif($errorCheck == "invalidEmail"){
-
-      echo "<p> You have used some invalid character for the email. Please try again! </p>";
-  
-    }elseif($errorCheck == "pwdMatch"){
-
-      echo "<p> You password and repeat password does not match. Please try again! </p>";
-
-
-    }elseif($errorCheck == "existingEmail"){
-
-      echo "<p> This email it´s already in use. Please login! </p>";
-
-
-    }
-
-}
-
-
-?>
 
 
     

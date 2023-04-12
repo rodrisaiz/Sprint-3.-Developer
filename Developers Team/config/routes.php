@@ -13,6 +13,7 @@
 $routes = array(
 	'/' => 'user#index',
 	'/signup' => 'user#signup',
+	'/register' => 'user#register',
 	'/login' => 'user#login',
 	'/error' => 'user#error',
 	'/test' => 'user#test',

@@ -28,7 +28,7 @@ class Login extends DB{
         }elseif($this->autentication() == false){
 
             session_destroy();
-            return header('Location:/web/?error=autentication');
+            return header('Location:/web/?error=autentication&email='.$this->email.'');
 
         }else{
            
