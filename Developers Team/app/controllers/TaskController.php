@@ -2,13 +2,14 @@
 
 class TaskController extends ApplicationController
 {
-	public function indexAction()
+
+
+	public function homeAction()
 	{
-		$this->view->message = "hello from task::index";
+		$home = new Task;
+		$this->view->_data = $home->showTasks();
 	}
+
+
 	
-	public function checkAction()
-	{
-		echo "hello from task::check";
-	}
 }
