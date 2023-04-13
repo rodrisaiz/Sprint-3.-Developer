@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New task</title>
+</head>
+<body>
+
+
+<form action="/web/taskwrite" method="post">
+
+  <label for="newTask" >New task</label><br><br>
+
+  
+
+
+  <label for="title">Title:</label><br>
+
+  <?php
+  
+  if(isset($_GET['title'])){
+    $title = $_GET['title'];
+
+    echo '<input type="text" id="title" name="title" value="'.$title.'"><br>';
+
+  }else{
+
+    echo '<input type="text" id="title" name="title" value=""><br>';
+  }
+
+  ?>
+
+  <br>
+
+
+  <label for="description">Description:</label><br>
+
+  
+  <?php
+  
+  if(isset($_GET['description'])){
+    
+    $description = $_GET['description'];
+
+    echo '<input type="text" id="description" name="description" value="'.$description.'"><br>';
+
+  }else{
+
+    echo '<input type="text" id="description" name="description" value=""><br>';
+  }
+
+  ?>
+
+  <br>
+  <br>
+
+  <label for="pet-status">Status</label>
+
+
+
+  <?php
+  
+  if(isset($_GET['status'])){
+    $status = $_GET['status'];
+
+
+    if($status ==  'Started'){
+
+      echo '<select name="status" id="status">
+                <option value="">--Please choose an option--</option>
+                <option value="Started" selected="selected">Started</option>
+                <option value="In progres">In progres</option>
+                <option value="Done">Done</option>
+            </select>';
+
+    }elseif($status == "In progres"){
+
+      echo '<select name="status" id="status">
+                <option value="">--Please choose an option--</option>
+                <option value="Started">Started</option>
+                <option value="In progres" selected="selected">In progres</option>
+                <option value="Done">Done</option>
+            </select>';
+
+    }elseif($status == "Done"){
+
+      echo '<select name="status" id="status">
+                <option value="">--Please choose an option--</option>
+                <option value="Started">Started</option>
+                <option value="In progres">In progres</option>
+                <option value="Done" selected="selected">Done</option>
+            </select>';
+    }
+
+  
+  }else{
+
+    echo '<select name="status" id="status">
+              <option value="">--Please choose an option--</option>
+              <option value="Started">Started</option>
+              <option value="In progres">In progres</option>
+              <option value="Done">Done</option>
+          </select>';
+  }
+
+  ?>
+
+    <br>
+    <br>
+
+
+  <label for="start_date">Start date:</label><br>
+  <input type="date" id="start_date" name="start_date" value=""><br>
+  <br>
+
+  <label for="end_date">End date:</label><br>
+  <input type="date" id="end_date" name="end_date" value=""><br>
+
+  <br>
+  <br>
+
+
+  <button type="submit" name="submit">ADD TASK</button>
+
+
+  </form>
+
+  <?php
+  
+
+  /*
+  if(isset($_GET['uid'])){
+    $uid = $_GET['uid'];
+
+
+    echo '<input type="text" id="uid" name="uid" value="'.$uid.'"><br>';
+
+
+  }else{
+
+    echo '<input type="text" id="uid" name="uid" ><br>';
+  }
+
+  ?>
+
+  
+  <label for="email">Email:</label><br>
+
+  <?php
+  
+  if(isset($_GET['email'])){
+    $email = $_GET['email'];
+
+    echo '<input type="text" id="email" name="email" value="'.$email.'"><br>';
+
+  }else{
+
+    echo '<input type="text" id="email" name="email" value=""><br>';
+  }
+
+  ?>
+  
+  <label for="pwd">Password:</label><br>
+  <input type="text" id="pwd" name="pwd" value=""><br>
+  <label for="pwdrepeat">Repeat Password:</label><br>
+  <input type="text" id="pwdrepeat" name="pwdrepeat" value=""><br><br>
+
+  <button type="submit" name="submit">SIGNUP</button>
+
+
+
+<?php
+  */
+
+
+if(!isset($_GET['error'])){
+  
+
+}else{
+
+    $errorCheck = $_GET['error'];
+
+    if($errorCheck == "emotyInputs"){
+
+      echo "<p> You have leave some empty fields. Please try again! </p>";   
+
+    }elseif($errorCheck == "invalidUid"){
+
+      echo "<p> You have used some invalid character for the username. Please try again! </p>";
+
+    }elseif($errorCheck == "invalidEmail"){
+
+      echo "<p> You have used some invalid character for the email. Please try again! </p>";
+  
+    }elseif($errorCheck == "pwdMatch"){
+
+      echo "<p> You password and repeat password does not match. Please try again! </p>";
+
+
+    }elseif($errorCheck == "existingEmail"){
+
+      echo "<p> This email it´s already in use. Please login! </p>";
+
+
+    }
+
+}
+
+
+?>
+
+</form> 
+
+<form action="/web/home">
+
+  <br>
+  <br>
+  <br>
+
+<button type="submit" name="submit">CANCEL!!!!</button>
+
+
+</form> 
+
+
+
+    
+</body>
+</html>
