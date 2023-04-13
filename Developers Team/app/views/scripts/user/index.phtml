@@ -14,6 +14,7 @@
   <label for="Login">Login</label><br><br>
 
   <label for="email">Email:</label><br>
+
   <?php
   
   if(isset($_GET['email'])){
@@ -35,30 +36,27 @@
 
   <?php
   
-if(!isset($_GET['error'])){
-  exit();
+    if(!isset($_GET['error'])){
+      
+      
 
-}else{
+    }else{
 
-    $errorCheck = $_GET['error'];
+        $errorCheck = $_GET['error'];
 
-    if($errorCheck == "notExistingEmail"){
+        if($errorCheck == "notExistingEmail"){
 
-      echo "<p> The email do not its registered. Please sign up!</p>";   
+          echo "<p> The email do not its registered. Please sign up!</p>";   
 
-    }elseif($errorCheck == "autentication"){
+        }elseif($errorCheck == "autentication"){
 
-      echo "<p> Wrong password. Please try again! </p>";
+          echo "<p> Wrong password. Please try again! </p>";
 
+        }
     }
-
-}
-
-
-?>
-
-
-</form> 
+  
+  ?>
+  </form> 
 
 
 <form action="/web/register">
@@ -70,7 +68,7 @@ if(!isset($_GET['error'])){
 <p> If you are not registered click here! ↓↓↓</p>
 <button type="submit" name="submit">Sign Up!</button>
 
-
+  
 </form> 
 
 

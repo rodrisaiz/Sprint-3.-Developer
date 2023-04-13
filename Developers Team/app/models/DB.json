@@ -3,7 +3,22 @@
         "id_user": 1,
         "userName": "Rodri",
         "email": "therustywhitebison@gmail.com",
-        "pwd": "$2y$10$NNGNOj2VFKrUHqEjL1Exuu4BIgzHvAVdVlk\/SYY5ZCIjYSeW88dcS",
-        "tareas": []
+        "pwd": "$2y$10$SF4WrjHPdErSHk\/6k6lCnefCQmQsX9BaVOggIeiI0OC0jFePR.nBK",
+        "tasks": [
+            {
+                "title": "title del tast 1",
+                "description": "Decription del test 1",
+                "status": "Started",
+                "start_date": "",
+                "end_date": ""
+            },
+            {
+                "title": "Title Test 2",
+                "description": "Description Test 2",
+                "status": "In progres",
+                "start_date": "2023-04-06",
+                "end_date": "2023-04-20"
+            }
+        ]
     }
 ]
