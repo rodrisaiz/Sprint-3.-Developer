@@ -1,3 +1,8 @@
+<?php
+$task = $this->_data["_data"];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +14,9 @@
 <body>
 
 
-<form action="/web/taskwrite" method="post">
+<form action="/web/taskupdate?item=<?php echo $_GET['item']; ?>" method="post">
 
-  <label for="newTask" >New task</label><br><br>
+  <label for="edit task" >New task</label><br><br>
 
   
 
@@ -20,15 +25,8 @@
 
   <?php
   
-  if(isset($_GET['title'])){
-    $title = $_GET['title'];
 
-    echo '<input type="text" id="title" name="title" value="'.$title.'"><br>';
-
-  }else{
-
-    echo '<input type="text" id="title" name="title" value=""><br>';
-  }
+    echo '<input type="text" id="title" name="title" value="'.$task['title'].'"><br>';
 
   ?>
 
@@ -40,33 +38,20 @@
   
   <?php
   
-  if(isset($_GET['description'])){
-    
-    $description = $_GET['description'];
-
-    echo '<input type="text" id="description" name="description" value="'.$description.'"><br>';
-
-  }else{
-
-    echo '<input type="text" id="description" name="description" value=""><br>';
-  }
+    echo '<input type="text" id="description" name="description" value="'.$task['description'].'"><br>';
 
   ?>
 
   <br>
   <br>
 
-  <label for="pet-status">Status</label>
+  <label for="status">Status</label>
 
 
 
   <?php
-  
-  if(isset($_GET['status'])){
-    $status = $_GET['status'];
-
-
-    if($status ==  'Started'){
+ 
+    if($task['status'] ==  'Started'){
 
       echo '<select name="status" id="status">
                 <option value="">--Please choose an option--</option>
@@ -75,7 +60,7 @@
                 <option value="Done">Done</option>
             </select>';
 
-    }elseif($status == "In progres"){
+    }elseif($task['status'] == "In progres"){
 
       echo '<select name="status" id="status">
                 <option value="">--Please choose an option--</option>
@@ -84,7 +69,7 @@
                 <option value="Done">Done</option>
             </select>';
 
-    }elseif($status == "Done"){
+    }elseif($task['status'] == "Done"){
 
       echo '<select name="status" id="status">
                 <option value="">--Please choose an option--</option>
@@ -92,10 +77,7 @@
                 <option value="In progres">In progres</option>
                 <option value="Done" selected="selected">Done</option>
             </select>';
-    }
-
-  
-  }else{
+    }else{
 
     echo '<select name="status" id="status">
               <option value="">--Please choose an option--</option>
@@ -109,27 +91,35 @@
 
     <br>
     <br>
-
+  
 
   <label for="start_date">Start date:</label><br>
-  <input type="date" id="start_date" name="start_date" value=""><br>
+  <?php
+
+  echo '<input type="date" id="start_date" name="start_date" value="'.$task["start_date"].'"><br>'
+
+  ?>
   <br>
 
   <label for="end_date">End date:</label><br>
-  <input type="date" id="end_date" name="end_date" value=""><br>
+
+  <?php
+
+  echo '<input type="date" id="start_date" name="start_date" value="'.$task["end_date"].'"><br>'
+
+  ?>
 
   <br>
   <br>
 
 
-  <button type="submit" name="submit">ADD TASK</button>
+  <button type="submit" name="submit">UPDATE TASK</button>
 
 
   </form>
 
   <?php
-
-
+  
 if(!isset($_GET['error'])){
   
 

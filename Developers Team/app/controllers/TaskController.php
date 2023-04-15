@@ -30,5 +30,26 @@ class TaskController extends ApplicationController
 		}
 	}
 
-	
+	public function editAction()
+	{
+
+		$edit = new Task;
+		$this->view->_data = $edit->showOneTask($_GET["item"]);
+	}
+
+
+	public function updateAction()
+	{
+		if(isset($_POST["submit"])){
+
+			$task = new Task();
+
+			$task->updateTask($_POST["title"], $_POST["description"], $_POST["status"], $_POST["start_date"], $_POST["end_date"]);
+			
+			
+		}else{
+			echo "error";
+		}
+	}
+
 }
