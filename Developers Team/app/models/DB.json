@@ -6,18 +6,18 @@
         "pwd": "$2y$10$SF4WrjHPdErSHk\/6k6lCnefCQmQsX9BaVOggIeiI0OC0jFePR.nBK",
         "tasks": [
             {
-                "title": "title del tast 1",
-                "description": "Decription del test 1",
-                "status": "Started",
+                "title": "primero",
+                "description": "primero",
+                "status": "Done",
                 "start_date": "",
-                "end_date": ""
+                "end_date": null
             },
             {
-                "title": "Title Test 2",
-                "description": "Description Test 2",
-                "status": "In progres",
-                "start_date": "2023-04-06",
-                "end_date": "2023-04-20"
+                "title": "segundo",
+                "description": "segundo",
+                "status": "Done",
+                "start_date": "",
+                "end_date": null
             }
         ]
     }
