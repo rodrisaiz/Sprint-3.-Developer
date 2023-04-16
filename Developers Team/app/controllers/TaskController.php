@@ -52,4 +52,14 @@ class TaskController extends ApplicationController
 		}
 	}
 
+
+	public function deleteAction()
+	{
+	
+			$task = new Task();
+
+			$task->deleteTask();
+			
+	}
+
 }
