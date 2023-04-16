@@ -10,7 +10,7 @@
         "id_user": 1,
         "userName": "Rodri",
         "email": "rodri@gmail.com",
-        "pwd": "$2y$10$11YisLhdHbuk3q1Fk\/K8BOIO1GAgMeY\/vBbadOLCvZtrErWD1uTRC",
+        "pwd": "$2y$10$e6MNRfe8\/LNWnyGhiwMQFOt1UOwBWgn7Bqs5pynSyS.bDwEspkg0C",
         "tasks": [
             {
                 "id_task": 0,
@@ -29,5 +29,19 @@
                 "end_date": ""
             }
         ]
+    },
+    {
+        "id_user": 2,
+        "userName": "Rodri",
+        "email": "rodri2@gmail.com",
+        "pwd": "$2y$10$7zOPQjEe9MrY0uGR2cxxWe84x1mH.MQ9OGQGL5B5vR.HdMYiqaeru",
+        "tasks": []
+    },
+    {
+        "id_user": 3,
+        "userName": "Rodri",
+        "email": "rodri10@gmail.com",
+        "pwd": "$2y$10$UGpu5QKuOjp07xt6WwEkiOZr4MHt1LCoXs\/Csbk\/jrcA3ofQScIT6",
+        "tasks": []
     }
 ]

@@ -159,57 +159,48 @@ class User extends DB{
 
                 }
 
-    }
-
-/*
-        if($this->emotyInputs() == false){
-
-            return header('Location:/web/taskedit?error=emotyInputs&title='.$title.'&description='.$description.'&status='.$status.'');
-
-        }else{
-
-            $counter = -1 ;
-            $id =  $_SESSION["id"];
-
-            foreach($this->read() as $user){
-
-                $counter ++;
-
-                if( $user['id_user'] == $id){
-
-                    $decoded_json = $this->read();
-
-                    $taskPosition = $_GET['item'];
-
-                    $id_task = $decoded_json[$counter]['tasks'][$taskPosition]['id_task'];
-
-                    $task = array(
-
-                        'id_task' => $id_task,
-                        'title' => $title,
-                        'description' => $description,
-                        'status' => $status,
-                        'start_date' => $start_date,
-                        'end_date' => $end_date,
-                    );
-
-                
-                    $decoded_json[$counter]['tasks'][$taskPosition] = $task;
-
-                    $write = $this->write($decoded_json);
-
-                    return header('Location:/web/home');
-                }
-            }
         }
 
-        */
     }
 
-    
+    public function deleteUser()
+    {
+
+        $counter = -1 ;
+        $id =  $_SESSION["id"];
+
+        $userCounter = -1 ;
+        $newUserList = array();
+        $decoded_json = $this->read();
+        $specificUser = $decoded_json[$id];
+
+
+        foreach($this->read() as $user){
+
+            $counter ++;
+
+            if( $user['id_user'] == $specificUser['id_user']){
+                
+                //$userCounter++;
+
+            }else{
+                        
+                //$userCounter++;
+
+                array_push($newUserList,$decoded_json[$counter]);
+
+            }
+
+        }
+
+        $decoded_json = $newUserList;
+
+
+        $write = $this->write($decoded_json);
+        return header('Location:/web');
+
+    }
 }
-
-   
-
+    
 ?>
  

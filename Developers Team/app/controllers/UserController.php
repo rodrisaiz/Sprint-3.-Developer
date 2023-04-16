@@ -70,5 +70,14 @@ class UserController extends ApplicationController
 		}
 	}
 
+	public function deleteAction()
+	{
+	
+			$task = new User();
+
+			$task->deleteUser();
+			
+	}
+
 
 }
