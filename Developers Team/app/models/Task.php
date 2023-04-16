@@ -48,13 +48,13 @@ class Task extends DB{
         }else{
 
             $counter = -1;
-            $id =  $_SESSION["id"];
+
+            $id = $_SESSION["id"];
 
             foreach($this->read() as $user){
+                $counter ++;
 
                 if( $user['id_user'] == $id){
-
-                    $counter ++;
 
                     $decoded_json = $this->read();
             
@@ -124,9 +124,9 @@ class Task extends DB{
 
             foreach($this->read() as $user){
 
-                if( $user['id_user'] == $id){
+                $counter ++;
 
-                    $counter ++;
+                if( $user['id_user'] == $id){
 
                     $decoded_json = $this->read();
 
@@ -155,6 +155,7 @@ class Task extends DB{
         }
     }
 
+
     public function deleteTask()
     {
 
@@ -163,39 +164,28 @@ class Task extends DB{
 
         foreach($this->read() as $user){
 
+            $counter ++;
+
             if( $user['id_user'] == $id){
-                
-                $counter ++;
 
                 $taskPosition = $_GET['item'];
-                //$taskPosition = 1;
-
-
                 $decoded_json = $this->read();
 
 
                 $tasks = $decoded_json[$counter]['tasks'];
-
                 $tasksCounter = -1 ;
-
                 $specificTask = $decoded_json[$counter]['tasks'][$taskPosition];
-
                 $newTasksList = array();
 
                 foreach ($tasks  as $task){
 
                     if($task['id_task'] == $specificTask['id_task'] ){
 
-
                         $tasksCounter++;
-                        //array_push($newTasksList,$decoded_json[$counter]['tasks'][$tasksCounter]);
-                        //array_push($newTasksList,2 );
 
                     }else{
                         
                         $tasksCounter++;
-
-                        //array_push($newTasksList,1 );
                         array_push($newTasksList,$decoded_json[$counter]['tasks'][$tasksCounter]);
 
                     }
@@ -205,100 +195,12 @@ class Task extends DB{
                 $decoded_json[$counter]['tasks'] = $newTasksList;
 
 
-
-
-
-                //pruebas
-
-
-                /*
-
-                foreach( $user['tasks']  as $deletTask){
-
-                    if( $deletTask == $decoded_json[$counter]['tasks'][$taskPosition]){
-
-                        unset($deletTask);
-
-
-                        $decoded_json[$counter]['tasks'] = $user['tasks']
-
-                }
-            
-                 $tasks = $decoded_json[$counter]['tasks'];
-
-
-                unset($tasks[$taskPosition]);
-
-                $decoded_json[$counter]['tasks'] = $tasks;
-
-
-                
-                $task = $decoded_json[$counter]['tasks'][$taskPosition];
-
-                unset($task);
-
-                $decoded_json[$counter]['tasks'][$taskPosition] = $task;
-
-*/
                 $write = $this->write($decoded_json);
-
                 return header('Location:/web/home');
 
             }
-
-
         }
-
-    
-
-
-        /*
-        if($this->emotyInputs() == false){
-
-            return header('Location:/web/taskedit?error=emotyInputs&title='.$title.'&description='.$description.'&status='.$status.'');
-
-        }else{
-
-            $counter = -1 ;
-            $id =  $_SESSION["id"];
-
-            foreach($this->read() as $user){
-
-                if( $user['id_user'] == $id){
-
-                    $counter ++;
-
-                    $decoded_json = $this->read();
-
-                    $taskPosition = $_GET['item'];
-
-                    $task = array(
-
-                        'title' => $title,
-                        'description' => $description,
-                        'status' => $status,
-                        'start_date' => $start_date,
-                        'end_date' => $end_date,
-                    );
-
-                
-                    $decoded_json[$counter]['tasks'][$taskPosition] = $task;
-
-                    $write = $this->write($decoded_json);
-
-                    return header('Location:/web/home');
-                }
-            }
-        }
-
-        */
     }
-
-
-    
-
-
-
 }
 
 
