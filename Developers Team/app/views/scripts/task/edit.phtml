@@ -1,0 +1,179 @@
+<?php
+$task = $this->_data["_data"];
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New task</title>
+</head>
+<body>
+
+
+<form action="/web/taskupdate?item=<?php echo $_GET['item']; ?>" method="post">
+
+  <label for="edit task" >New task</label><br><br>
+
+  
+
+
+  <label for="title">Title:</label><br>
+
+  <?php
+  
+
+    echo '<input type="text" id="title" name="title" value="'.$task['title'].'"><br>';
+
+  ?>
+
+  <br>
+
+
+  <label for="description">Description:</label><br>
+
+  
+  <?php
+  
+    echo '<input type="text" id="description" name="description" value="'.$task['description'].'"><br>';
+
+  ?>
+
+  <br>
+  <br>
+
+  <label for="status">Status</label>
+
+
+
+  <?php
+
+ 
+    if($task['status'] ==  'Started'){
+
+      echo '<select name="status" id="status">
+                <option value="">--Please choose an option--</option>
+                <option value="Started" selected="selected">Started</option>
+                <option value="In progres">In progres</option>
+                <option value="Done">Done</option>
+            </select>';
+
+    }elseif($task['status'] == "In progres"){
+
+      echo '<select name="status" id="status">
+                <option value="">--Please choose an option--</option>
+                <option value="Started">Started</option>
+                <option value="In progres" selected="selected">In progres</option>
+                <option value="Done">Done</option>
+            </select>';
+
+    }elseif($task['status'] == "Done"){
+
+      echo '<select name="status" id="status">
+                <option value="">--Please choose an option--</option>
+                <option value="Started">Started</option>
+                <option value="In progres">In progres</option>
+                <option value="Done" selected="selected">Done</option>
+            </select>';
+
+    }elseif($task['status']){
+
+      echo '<select name="status" id="status">
+                <option value="">--Please choose an option--</option>
+                <option value="Started">Started</option>
+                <option value="In progres">In progres</option>
+                <option value="Done">Done</option>
+            </select>';
+  }
+  
+
+  ?>
+
+    <br>
+    <br>
+  
+
+  <label for="start_date">Start date:</label><br>
+  <?php
+
+  echo '<input type="date" id="start_date" name="start_date" value="'.$task["start_date"].'"><br>'
+
+  ?>
+  <br>
+
+  <label for="end_date">End date:</label><br>
+
+  <?php
+
+  echo '<input type="date" id="start_date" name="start_date" value="'.$task["end_date"].'"><br>'
+
+  ?>
+
+  <br>
+  <br>
+
+
+  <button type="submit" name="submit">UPDATE TASK</button>
+
+
+  </form>
+
+  <?php
+  
+if(!isset($_GET['error'])){
+  
+
+}else{
+
+    $errorCheck = $_GET['error'];
+
+    if($errorCheck == "emotyInputs"){
+
+      echo "<p> You have leave some empty fields. Please try again! </p>";   
+
+    }elseif($errorCheck == "invalidUid"){
+
+      echo "<p> You have used some invalid character for the username. Please try again! </p>";
+
+    }elseif($errorCheck == "invalidEmail"){
+
+      echo "<p> You have used some invalid character for the email. Please try again! </p>";
+  
+    }elseif($errorCheck == "pwdMatch"){
+
+      echo "<p> You password and repeat password does not match. Please try again! </p>";
+
+
+    }elseif($errorCheck == "existingEmail"){
+
+      echo "<p> This email it´s already in use. Please login! </p>";
+
+
+    }
+
+}
+
+
+?>
+
+</form> 
+
+<form action="/web/home">
+
+  <br>
+  <br>
+  <br>
+
+<button type="submit" name="submit">CANCEL!!!!</button>
+
+
+</form> 
+
+
+
+    
+</body>
+</html>

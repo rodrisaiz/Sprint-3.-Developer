@@ -6,7 +6,6 @@ class UserController extends ApplicationController
 	{
 		return $this->view;
 		
-		//$this->view->message = "hello from User::index";
 	}
 
 	public function registerAction()
@@ -40,7 +39,7 @@ class UserController extends ApplicationController
 			$login = new Login($_POST["email"], $_POST["pwd"]);
 
 			$login->login();
-			//$login->login();
+			
 			
 		}else{
 			echo "error";

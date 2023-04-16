@@ -148,17 +148,25 @@ class Signup extends DB{
 
     public function setUser(){
 
+        session_destroy();
 
         $user = array();
-        $id_user = "";
-        $tareas = array();     
+        $id_user = 0;
+        $tasks = array();     
        
 
         $decoded_json = $this->read();
 
-
         $finalPosition = count($decoded_json);
-        $id_user = $finalPosition + 1;
+
+
+        foreach($decoded_json as $oneUser){
+
+            $id_user = $oneUser['id_user'] + 1;
+
+        }
+
+    
 
         $user = array(
          
@@ -166,13 +174,19 @@ class Signup extends DB{
             'userName' => $this->uid,
             'email' => $this->email,
             'pwd' => password_hash($this->pwd, PASSWORD_BCRYPT),
-            'tareas' => $tareas,
+            'tasks' => $tasks,
             
             );
+
+            
 
         $decoded_json[$finalPosition] = $user;
 
         $write = $this->write($decoded_json);
+
+        session_start();
+
+        $_SESSION["id"] =  $id_user;
 
         header('Location: /web/home');
         
