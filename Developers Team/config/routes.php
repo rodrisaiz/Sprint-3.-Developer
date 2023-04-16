@@ -2,6 +2,7 @@
 
 
 $routes = array(
+	
 	'/' => 'user#index',
 	'/signup' => 'user#signup',
 	'/register' => 'user#register',
@@ -14,6 +15,7 @@ $routes = array(
 	'/taskdelete' => 'task#delete',
 	'/useredit' => 'user#edit',
 	'/userupdate' => 'user#update',
+	'/userdelete' => 'user#delete',
 
 );
 
