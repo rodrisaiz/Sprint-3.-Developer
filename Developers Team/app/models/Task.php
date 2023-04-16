@@ -60,8 +60,20 @@ class Task extends DB{
             
                     $finalTask = count($decoded_json[$counter]['tasks']);
 
+                    $tasks = $decoded_json[$counter]['tasks'];
+
+                    $id_task = 0;
+
+                    foreach($tasks as $oneTask){
+
+                        $id_task = $oneTask['id_task'] + 1;
+
+                    }
+
+
                     $task = array(
 
+                        'id_task' => $id_task,
                         'title' => $title,
                         'description' => $description,
                         'status' => $status,
@@ -120,8 +132,11 @@ class Task extends DB{
 
                     $taskPosition = $_GET['item'];
 
+                    $id_task = $decoded_json[$counter]['tasks'][$taskPosition]['id_task'];
+
                     $task = array(
 
+                        'id_task' => $id_task,
                         'title' => $title,
                         'description' => $description,
                         'status' => $status,
@@ -140,10 +155,151 @@ class Task extends DB{
         }
     }
 
+    public function deleteTask()
+    {
+
+        $counter = -1 ;
+        $id =  $_SESSION["id"];
+
+        foreach($this->read() as $user){
+
+            if( $user['id_user'] == $id){
+                
+                $counter ++;
+
+                $taskPosition = $_GET['item'];
+                //$taskPosition = 1;
+
+
+                $decoded_json = $this->read();
+
+
+                $tasks = $decoded_json[$counter]['tasks'];
+
+                $tasksCounter = -1 ;
+
+                $specificTask = $decoded_json[$counter]['tasks'][$taskPosition];
+
+                $newTasksList = array();
+
+                foreach ($tasks  as $task){
+
+                    if($task['id_task'] == $specificTask['id_task'] ){
+
+
+                        $tasksCounter++;
+                        //array_push($newTasksList,$decoded_json[$counter]['tasks'][$tasksCounter]);
+                        //array_push($newTasksList,2 );
+
+                    }else{
+                        
+                        $tasksCounter++;
+
+                        //array_push($newTasksList,1 );
+                        array_push($newTasksList,$decoded_json[$counter]['tasks'][$tasksCounter]);
+
+                    }
+
+                }
+
+                $decoded_json[$counter]['tasks'] = $newTasksList;
+
+
+
+
+
+                //pruebas
+
+
+                /*
+
+                foreach( $user['tasks']  as $deletTask){
+
+                    if( $deletTask == $decoded_json[$counter]['tasks'][$taskPosition]){
+
+                        unset($deletTask);
+
+
+                        $decoded_json[$counter]['tasks'] = $user['tasks']
+
+                }
+            
+                 $tasks = $decoded_json[$counter]['tasks'];
+
+
+                unset($tasks[$taskPosition]);
+
+                $decoded_json[$counter]['tasks'] = $tasks;
+
+
+                
+                $task = $decoded_json[$counter]['tasks'][$taskPosition];
+
+                unset($task);
+
+                $decoded_json[$counter]['tasks'][$taskPosition] = $task;
+
+*/
+                $write = $this->write($decoded_json);
+
+                return header('Location:/web/home');
+
+            }
+
+
+        }
+
+    
+
+
+        /*
+        if($this->emotyInputs() == false){
+
+            return header('Location:/web/taskedit?error=emotyInputs&title='.$title.'&description='.$description.'&status='.$status.'');
+
+        }else{
+
+            $counter = -1 ;
+            $id =  $_SESSION["id"];
+
+            foreach($this->read() as $user){
+
+                if( $user['id_user'] == $id){
+
+                    $counter ++;
+
+                    $decoded_json = $this->read();
+
+                    $taskPosition = $_GET['item'];
+
+                    $task = array(
+
+                        'title' => $title,
+                        'description' => $description,
+                        'status' => $status,
+                        'start_date' => $start_date,
+                        'end_date' => $end_date,
+                    );
+
+                
+                    $decoded_json[$counter]['tasks'][$taskPosition] = $task;
+
+                    $write = $this->write($decoded_json);
+
+                    return header('Location:/web/home');
+                }
+            }
+        }
+
+        */
+    }
+
 
     
 
 
 
 }
+
+
 ?>

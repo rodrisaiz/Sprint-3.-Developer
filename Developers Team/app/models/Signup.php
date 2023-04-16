@@ -150,15 +150,22 @@ class Signup extends DB{
 
 
         $user = array();
-        $id_user = "";
+        $id_user = 0;
         $tasks = array();     
        
 
         $decoded_json = $this->read();
 
-
         $finalPosition = count($decoded_json);
-        $id_user = $finalPosition + 1;
+
+
+        foreach($decoded_json as $oneUser){
+
+            $id_user = $oneUser['id_user'] + 1;
+
+        }
+
+    
 
         $user = array(
          
@@ -169,6 +176,8 @@ class Signup extends DB{
             'tasks' => $tasks,
             
             );
+
+            
 
         $decoded_json[$finalPosition] = $user;
 
