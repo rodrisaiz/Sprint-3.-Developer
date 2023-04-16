@@ -148,6 +148,7 @@ class Signup extends DB{
 
     public function setUser(){
 
+        session_destroy();
 
         $user = array();
         $id_user = 0;

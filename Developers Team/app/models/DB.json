@@ -1,25 +1,25 @@
 [
     {
-        "id_user": 1,
+        "id_user": 0,
         "userName": "Rodri",
         "email": "therustywhitebison@gmail.com",
-        "pwd": "$2y$10$SF4WrjHPdErSHk\/6k6lCnefCQmQsX9BaVOggIeiI0OC0jFePR.nBK",
+        "pwd": "$2y$10$GKtZtqssmPBsmZHHjUGCqO1FUi7GORMa6L7kKDQfch2YlygcT5ymO",
+        "tasks": []
+    },
+    {
+        "id_user": 1,
+        "userName": "Rodri",
+        "email": "rodri@gmail.com",
+        "pwd": "$2y$10$W.mfOdpTHZPrCwyW4uphc.c4on0CzayDtLmrF4RLlOo.Hbj27eAG.",
         "tasks": [
             {
                 "id_task": 0,
-                "title": "primero",
-                "description": "1",
+                "title": "50",
+                "description": "25",
                 "status": "Started",
                 "start_date": "",
-                "end_date": ""
+                "end_date": null
             }
         ]
-    },
-    {
-        "id_user": 2,
-        "userName": "Rodri",
-        "email": "rodri6@gmail.com",
-        "pwd": "$2y$10$RLZhQKYynub7eP3srkxWN.qFjw2JlpyJeOT4MFdM5eHy4MUEvPqM2",
-        "tasks": []
     }
 ]
