@@ -48,4 +48,36 @@ class UserController extends ApplicationController
 	}
 
 
+	public function editAction()
+	{
+
+		$edit = new User;
+		$this->view->_data = $edit->showOneUser();
+	}
+
+
+	public function updateAction()
+	{
+		if(isset($_POST["submit"])){
+
+			$task = new User();
+
+			$task->updateUser($_POST["uid"], $_POST["pwd"], $_POST["pwdrepeat"], $_POST["email"]);
+			
+			
+		}else{
+			echo "error";
+		}
+	}
+
+	public function deleteAction()
+	{
+	
+			$task = new User();
+
+			$task->deleteUser();
+			
+	}
+
+
 }
