@@ -15,78 +15,25 @@ class User extends DB{
                 
             }
         }
-
     }
-/*
-    private function emotyInputs()
+
+
+    private function pwdMatch($pwd,$pwdrepeat)
     {
         $result;
 
-        // $_POST["uid"], $_POST["pwd"], $_POST["pwdrepeat"], $_POST["email"]
+        if($pwd !== $pwdrepeat){
 
-        if(empty($_POST["uid"])){
+            $result = false;
 
-            $counter = -1 ;
-            $id =  $_SESSION["id"];
-
-            foreach($this->read() as $user){
-
-                $counter ++;
-
-                if( $user['id_user'] == $id){
-
-                    $_POST["uid"] = $user['userName'];
-
-                }
-            }
-
-        }elseif(empty($_POST["pwd"])){
-
-            $counter = -1 ;
-            $id =  $_SESSION["id"];
-
-            foreach($this->read() as $user){
-
-                $counter ++;
-
-                if( $user['id_user'] == $id){
-
-                    $_POST["pwd"] = $user['pwd'];
-
-                }
-            }
-
-        }
-        
-        
-        
-        
-        
-        else{
+        }else{
 
             $result = true;
-
         }
 
         return $result;
     }
-*/
 
-    private function pwdMatch($pwd,$pwdrepeat)
-        {
-            $result;
-
-            if($pwd !== $pwdrepeat){
-
-                $result = false;
-
-            }else{
-
-                $result = true;
-            }
-
-            return $result;
-        }
 
     public function updateUser($uid, $pwd, $pwdrepeat, $email)
     {
@@ -109,59 +56,54 @@ class User extends DB{
                 $tasks = $oneUser['tasks'];
 
             }
-
         }
 
-            foreach($this->read() as $user){
+        foreach($this->read() as $user){
 
-                $counter ++;
+            $counter ++;
 
-                if( $user['id_user'] == $id){
+            if( $user['id_user'] == $id){
 
-                    if(!isset($pwd)){
+                if(!isset($pwd)){
 
-                        $pwd = $user['pwd'];
+                    $pwd = $user['pwd'];
 
-                    }elseif(!isset($pwdrepeat)){
+                }elseif(!isset($pwdrepeat)){
 
-                        $pwdrepeat = $user['pwd'];
-                    }
-
-                    if($this->pwdMatch($pwd, $pwdrepeat) == false){
-
-                        return header('Location:/web/useredit?error=pwdMatch&uid='.$uid.'&email='.$email.'');
-                    }else{
-
-                        $pwd = password_hash($pwd, PASSWORD_BCRYPT);
-                    }
-
-                    $decoded_json = $this->read();
-
-                    $user = array(
-         
-                        'id_user' => $id_user,
-                        'userName' => $uid,
-                        'email' => $email,
-                        'pwd' => $pwd,
-                        'tasks' => $tasks,
-                        
-                        );
-                
-                    $decoded_json[$counter] = $user;
-                    
-                    $write = $this->write($decoded_json);
-
-                    return header('Location:/web/home');
-
-
-
-
-
+                    $pwdrepeat = $user['pwd'];
                 }
 
-        }
+                if($this->pwdMatch($pwd, $pwdrepeat) == false){
 
+                    return header('Location:/web/useredit?error=pwdMatch&uid='.$uid.'&email='.$email.'');
+                }else{
+
+                    $pwd = password_hash($pwd, PASSWORD_BCRYPT);
+                }
+
+                $decoded_json = $this->read();
+
+                $user = array(
+        
+                    'id_user' => $id_user,
+                    'userName' => $uid,
+                    'email' => $email,
+                    'pwd' => $pwd,
+                    'tasks' => $tasks,
+                    
+                    );
+            
+                $decoded_json[$counter] = $user;
+                
+                $write = $this->write($decoded_json);
+
+                return header('Location:/web/home');
+
+            }
+        }
     }
+
+
 
     public function deleteUser()
     {
@@ -181,12 +123,9 @@ class User extends DB{
 
             if( $user['id_user'] == $specificUser['id_user']){
                 
-                //$userCounter++;
 
             }else{
                         
-                //$userCounter++;
-
                 array_push($newUserList,$decoded_json[$counter]);
 
             }
@@ -195,11 +134,11 @@ class User extends DB{
 
         $decoded_json = $newUserList;
 
-
         $write = $this->write($decoded_json);
         return header('Location:/web');
-
     }
+
+
 }
     
 ?>
