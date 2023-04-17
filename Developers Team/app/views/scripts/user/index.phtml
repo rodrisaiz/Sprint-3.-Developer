@@ -24,7 +24,7 @@
               </h1>
               <form class="space-y-4 md:space-y-6" action="/web/login" method="post">
                   <div>
-                    <label for="email" class="block mb-2 text-sm font-medium text-gray-200">Your email</label>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-200">Email</label>
 
                       <?php
 
@@ -59,11 +59,11 @@
 
                         if($errorCheck == "notExistingEmail"){
 
-                          echo  '<label for="pwd" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">The email it is not registered. Please sign up!</label>';   
+                          echo  '<label for="erro 1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">The email it is not registered. Please sign up!</label>';   
 
                         }elseif($errorCheck == "autentication"){
 
-                          echo  '<label for="pwd" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Wrong password. Please try again!</label>';   
+                          echo  '<label for="error 2" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Wrong password. Please try again!</label>';   
 
                         }
                     }
