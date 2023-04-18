@@ -10,16 +10,16 @@
                 "title": "primero",
                 "description": "25",
                 "status": "Started",
-                "start_date": "",
-                "end_date": ""
+                "start_date": "27/04/2020",
+                "end_date": "25/05/2022"
             },
             {
                 "id_task": 1,
                 "title": "segundo",
                 "description": "50",
                 "status": "Started",
-                "start_date": "",
-                "end_date": ""
+                "start_date": "27/04/2020",
+                "end_date": "25/05/2022"
             }
         ]
     },
@@ -28,27 +28,95 @@
         "userName": "Rodri",
         "email": "rodri2@gmail.com",
         "pwd": "$2y$10$7zOPQjEe9MrY0uGR2cxxWe84x1mH.MQ9OGQGL5B5vR.HdMYiqaeru",
-        "tasks": []
+        "tasks": [
+            {
+                "id_task": 0,
+                "title": "primero",
+                "description": "25",
+                "status": "Started",
+                "start_date": "27/04/2020",
+                "end_date": "25/05/2022"
+            },
+            {
+                "id_task": 1,
+                "title": "segundo",
+                "description": "50",
+                "status": "Started",
+                "start_date": "27/04/2020",
+                "end_date": "25/05/2022"
+            }
+        ]
     },
     {
         "id_user": 3,
         "userName": "Rodri",
         "email": "rodri10@gmail.com",
         "pwd": "$2y$10$UGpu5QKuOjp07xt6WwEkiOZr4MHt1LCoXs\/Csbk\/jrcA3ofQScIT6",
-        "tasks": []
+        "tasks": [
+            {
+                "id_task": 0,
+                "title": "primero",
+                "description": "25",
+                "status": "Started",
+                "start_date": "27/04/2020",
+                "end_date": "25/05/2022"
+            },
+            {
+                "id_task": 1,
+                "title": "segundo",
+                "description": "50",
+                "status": "Started",
+                "start_date": "27/04/2020",
+                "end_date": "25/05/2022"
+            }
+        ]
     },
     {
         "id_user": 5,
         "userName": "rodri85",
         "email": "Rodri85@gmail.com",
         "pwd": "$2y$10$loNMAvjccWnDiiK\/CPHnn.rRQmZgqPru9R6FtLFf5iurMhBxY0k5i",
-        "tasks": []
+        "tasks": [
+            {
+                "id_task": 0,
+                "title": "hola",
+                "description": "25",
+                "status": "Started",
+                "start_date": "27/04/2020",
+                "end_date": "25/05/2022"
+            },
+            {
+                "id_task": 1,
+                "title": "segundo",
+                "description": "50",
+                "status": "Started",
+                "start_date": "27/04/2020",
+                "end_date": "25/05/2022"
+            }
+        ]
     },
     {
         "id_user": 6,
         "userName": "Rodri",
         "email": "therustywhitebison@gmail.com",
         "pwd": "$2y$10$iE75FvYyTFGtkX38vIjL6emW6739RUOQ\/CykdfAaNPgZ8BBlwOF7C",
-        "tasks": []
+        "tasks": [
+            {
+                "id_task": 0,
+                "title": "primero",
+                "description": "25",
+                "status": "Started",
+                "start_date": "27/04/2020",
+                "end_date": "25/05/2022"
+            },
+            {
+                "id_task": 1,
+                "title": "segundo",
+                "description": "50",
+                "status": "Started",
+                "start_date": "27/04/2020",
+                "end_date": "25/05/2022"
+            }
+        ]
     }
 ]
