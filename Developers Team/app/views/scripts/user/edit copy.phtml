@@ -1,0 +1,136 @@
+<?php
+$user = $this->_data["_data"];
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+
+
+<form action="/web/userupdate" method="post">
+
+  <label for="Singup" >Sing Up</label><br><br>
+
+  <label for="uid">User name:</label><br>
+
+  <?php
+  
+  if(isset($user['userName'])){
+    $uid = $user['userName'];
+
+
+    echo '<input type="text" id="uid" name="uid" value="'.$uid.'"><br>';
+
+
+  }else{
+
+    echo '<input type="text" id="uid" name="uid" ><br>';
+  }
+
+  ?>
+
+  
+  <label for="email">Email:</label><br>
+
+  <?php
+  
+  if(isset($user['email'])){
+    $email = $user['email'];
+
+    echo '<input type="text" id="email" name="email" value="'.$email.'"><br>';
+
+  }else{
+
+    echo '<input type="text" id="email" name="email" value=""><br>';
+  }
+
+  ?>
+  
+  <label for="pwd">Password:</label><br>
+  <input type="text" id="pwd" name="pwd" value=""><br>
+  <label for="pwdrepeat">Repeat Password:</label><br>
+  <input type="text" id="pwdrepeat" name="pwdrepeat" value=""><br><br>
+
+  <button type="submit" name="submit">UPDATE USER!</button>
+
+
+
+<?php
+  
+if(!isset($_GET['error'])){
+  
+
+}else{
+
+    $errorCheck = $_GET['error'];
+
+    if($errorCheck == "emotyInputs"){
+
+      echo "<p> You have leave some empty fields. Please try again! </p>";   
+
+    }elseif($errorCheck == "invalidUid"){
+
+      echo "<p> You have used some invalid character for the username. Please try again! </p>";
+
+    }elseif($errorCheck == "invalidEmail"){
+
+      echo "<p> You have used some invalid character for the email. Please try again! </p>";
+  
+    }elseif($errorCheck == "pwdMatch"){
+
+      echo "<p> You password and repeat password does not match. Please try again! </p>";
+
+
+    }elseif($errorCheck == "existingEmail"){
+
+      echo "<p> This email it´s already in use. Please login! </p>";
+
+
+    }
+
+}
+
+
+?>
+
+</form> 
+
+<form action="/web/home">
+
+  <br>
+  <br>
+  <br>
+
+<p> If you cancel! ↓↓↓</p>
+<button type="submit" name="submit">CANCEL!!!</button>
+
+
+</form> 
+
+
+</form> 
+
+<form action="/web/userdelete">
+
+  <br>
+  <br>
+  <br>
+
+<p> If you wanna delete this user! ↓↓↓</p>
+<button type="submit" name="submit">DELETE USER!!</button>
+
+
+</form> 
+
+
+
+    
+</body>
+</html>
