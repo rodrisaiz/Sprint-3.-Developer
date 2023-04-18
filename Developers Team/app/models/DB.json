@@ -1,12 +1,5 @@
 [
     {
-        "id_user": 0,
-        "userName": "Rodri",
-        "email": "therustywhitebison@gmail.com",
-        "pwd": "$2y$10$GKtZtqssmPBsmZHHjUGCqO1FUi7GORMa6L7kKDQfch2YlygcT5ymO",
-        "tasks": []
-    },
-    {
         "id_user": 1,
         "userName": "Rodri",
         "email": "rodri@gmail.com",
@@ -42,6 +35,20 @@
         "userName": "Rodri",
         "email": "rodri10@gmail.com",
         "pwd": "$2y$10$UGpu5QKuOjp07xt6WwEkiOZr4MHt1LCoXs\/Csbk\/jrcA3ofQScIT6",
+        "tasks": []
+    },
+    {
+        "id_user": 5,
+        "userName": "rodri85",
+        "email": "Rodri85@gmail.com",
+        "pwd": "$2y$10$loNMAvjccWnDiiK\/CPHnn.rRQmZgqPru9R6FtLFf5iurMhBxY0k5i",
+        "tasks": []
+    },
+    {
+        "id_user": 6,
+        "userName": "Rodri",
+        "email": "therustywhitebison@gmail.com",
+        "pwd": "$2y$10$iE75FvYyTFGtkX38vIjL6emW6739RUOQ\/CykdfAaNPgZ8BBlwOF7C",
         "tasks": []
     }
 ]
