@@ -73,12 +73,24 @@ $countTask = count($task);
 
                   <td class="px-6 py-4">
 
-                        <?php echo $task[$i]["start_date"]; ?>
+                        <?php 
+                        $var =  $task[$i]['start_date'];
+                        $date = date('d-m-Y', strtotime($var));
+                        $end_date = str_replace( "-", "/", $date);
+                        
+                        echo $end_date; 
+                         ?>
                   </td>
 
                   <td class="px-6 py-4">
                   
-                        <?php echo $task[$i]["end_date"]; ?>
+                        <?php
+                        $var =  $task[$i]['end_date'];
+                        $date = date('d-m-Y', strtotime($var));
+                        $end_date = str_replace( "-", "/", $date);
+                        
+                        echo $end_date; 
+                        ?>
                   </td>
 
                   <td class="px-6 py-4 text-center max-w-min">
