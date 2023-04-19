@@ -10,16 +10,16 @@
                 "title": "primero",
                 "description": "25",
                 "status": "Started",
-                "start_date": "27/04/2020",
-                "end_date": "25/05/2022"
+                "start_date": "27\/04\/2020",
+                "end_date": "25\/05\/2022"
             },
             {
                 "id_task": 1,
                 "title": "segundo",
                 "description": "50",
                 "status": "Started",
-                "start_date": "27/04/2020",
-                "end_date": "25/05/2022"
+                "start_date": "27\/04\/2020",
+                "end_date": "25\/05\/2022"
             }
         ]
     },
@@ -34,16 +34,16 @@
                 "title": "primero",
                 "description": "25",
                 "status": "Started",
-                "start_date": "27/04/2020",
-                "end_date": "25/05/2022"
+                "start_date": "27\/04\/2020",
+                "end_date": "25\/05\/2022"
             },
             {
                 "id_task": 1,
                 "title": "segundo",
                 "description": "50",
                 "status": "Started",
-                "start_date": "27/04/2020",
-                "end_date": "25/05/2022"
+                "start_date": "27\/04\/2020",
+                "end_date": "25\/05\/2022"
             }
         ]
     },
@@ -58,16 +58,16 @@
                 "title": "primero",
                 "description": "25",
                 "status": "Started",
-                "start_date": "27/04/2020",
-                "end_date": "25/05/2022"
+                "start_date": "27\/04\/2020",
+                "end_date": "25\/05\/2022"
             },
             {
                 "id_task": 1,
                 "title": "segundo",
                 "description": "50",
                 "status": "Started",
-                "start_date": "27/04/2020",
-                "end_date": "25/05/2022"
+                "start_date": "27\/04\/2020",
+                "end_date": "25\/05\/2022"
             }
         ]
     },
@@ -82,16 +82,16 @@
                 "title": "hola",
                 "description": "25",
                 "status": "Started",
-                "start_date": "27/04/2020",
-                "end_date": "25/05/2022"
+                "start_date": "27\/04\/2020",
+                "end_date": "25\/05\/2022"
             },
             {
                 "id_task": 1,
                 "title": "segundo",
                 "description": "50",
                 "status": "Started",
-                "start_date": "27/04/2020",
-                "end_date": "25/05/2022"
+                "start_date": "27\/04\/2020",
+                "end_date": "25\/05\/2022"
             }
         ]
     },
@@ -106,16 +106,32 @@
                 "title": "primero",
                 "description": "25",
                 "status": "Started",
-                "start_date": "27/04/2020",
-                "end_date": "25/05/2022"
+                "start_date": "27\/04\/2020",
+                "end_date": "25\/05\/2022"
             },
             {
                 "id_task": 1,
                 "title": "segundo",
                 "description": "50",
                 "status": "Started",
-                "start_date": "27/04/2020",
-                "end_date": "25/05/2022"
+                "start_date": "27\/04\/2020",
+                "end_date": "25\/05\/2022"
+            },
+            {
+                "id_task": 2,
+                "title": "test",
+                "description": "test del front end",
+                "status": "Started",
+                "start_date": "",
+                "end_date": null
+            },
+            {
+                "id_task": 3,
+                "title": "test2",
+                "description": "test dos del front end",
+                "status": "Started",
+                "start_date": "2023-04-11",
+                "end_date": "2023-04-20"
             }
         ]
     }
