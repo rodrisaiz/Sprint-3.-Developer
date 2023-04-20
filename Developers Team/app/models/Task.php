@@ -62,6 +62,10 @@ class Task extends DB{
 
             return header('Location:/web/createtask?error=emotyInputs&title='.$title.'&description='.$description.'&status='.$status.'');
         
+        }elseif($this->wrongOrderDate() == false){
+
+            return header('Location:/web/createtask?error=wrongOrderDate&title='.$title.'&description='.$description.'&status='.$status.'&item='.$_GET['item'].'');
+
         }else{
 
             $counter = -1;

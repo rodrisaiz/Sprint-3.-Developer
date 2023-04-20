@@ -99,15 +99,15 @@
         "id_user": 6,
         "userName": "Rodri",
         "email": "therustywhitebison@gmail.com",
-        "pwd": "$2y$10$iE75FvYyTFGtkX38vIjL6emW6739RUOQ\/CykdfAaNPgZ8BBlwOF7C",
+        "pwd": "$2y$10$TshkWe4YYfYrISImEKjhteBWrJTQTF4xABNNQlPEujrwKlcrZyVDu",
         "tasks": [
             {
                 "id_task": 0,
-                "title": "1",
-                "description": "",
+                "title": "Prueba 1",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
                 "status": "Started",
-                "start_date": "2023-04-28",
-                "end_date": "2025-10-01"
+                "start_date": "2023-04-10",
+                "end_date": "2023-04-17"
             }
         ]
     }
