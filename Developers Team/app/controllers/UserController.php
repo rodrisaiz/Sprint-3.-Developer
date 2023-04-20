@@ -79,5 +79,12 @@ class UserController extends ApplicationController
 			
 	}
 
+	public function logoutAction()
+	{
+
+		$edit = new User;
+		$this->view->_data = $edit->logoutUser();
+	}
+
 
 }

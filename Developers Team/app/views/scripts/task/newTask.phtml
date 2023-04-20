@@ -1,3 +1,4 @@
+<?php include ROOT_PATH . '/app/views/layouts/header.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,7 +135,7 @@
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3  pointer-events-none">
                       <svg aria-hidden="true" class="w-5 h-5 text-gray-400 mt-7 ml-[128px]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
                   </div>
-                  <input name="start_date" id="start_date" type="date" class=" border  text-sm rounded-lg  block w-full pl-10 p-2.5  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Select date start">
+                  <input name="end_date" id="end_date" type="date" class=" border  text-sm rounded-lg  block w-full pl-10 p-2.5  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Select date start">
                 </div>
               </div>
 
@@ -155,13 +156,17 @@
               
                     echo  '<label for="erro 1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">You have leave some empty fields. Please try again!</label>';   
                 
-                  }                
+                  }elseif($errorCheck == "wrongOrderDate"){
+              
+                    echo  '<label for="erro 1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your end date cannot be previous at you startdate. Please try again!</label>';   
+            
+                  }                         
               }
             ?>
 
           </div>
           <div class="flex items-center mt-16 space-x-[370px]">
-            <button type="submit" name="submit" class=" inline-flex items-center border focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center border-white text-white  hover:border-gray-600  hover:text-white hover:bg-gray-600 focus:ring-gay-900">
+            <button type="submit" name="submit" class=" inline-flex items-center border focus:ring-7 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center border-white text-white  hover:border-gray-600  hover:text-white hover:bg-gray-600 focus:ring-gay-900">
               <svg class="w-5 h-5 mr-1 -ml-1" fill="currentColor" viewBox="0 0 18 18 " xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" clip-rule="evenodd"></path></svg>
               Add a new task
             </button>
@@ -170,7 +175,7 @@
 
             
 
-            <a href="/web/home" type="button" class=" inline-flex items-center border focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center border-white text-white  hover:border-gray-600  hover:text-white hover:bg-gray-600 focus:ring-gay-900">
+            <a href="/web/home" type="button" class=" inline-flex items-center border focus:ring-7 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center border-white text-white  hover:border-gray-600  hover:text-white hover:bg-gray-600 focus:ring-gay-900">
               <svg class="w-5 h-5 mr-1 -ml-1" fill="currentColor" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd"  d="M6.72 5.66l11.62 11.62A8.25 8.25 0 006.72 5.66zm10.56 12.68L5.66 6.72a8.25 8.25 0 0011.62 11.62zM5.105 5.106c3.807-3.808 9.98-3.808 13.788 0 3.808 3.807 3.808 9.98 0 13.788-3.807 3.808-9.98 3.808-13.788 0-3.808-3.807-3.808-9.98 0-13.788z" clip-rule="evenodd"></path></svg>
               Cancel 
             </a>

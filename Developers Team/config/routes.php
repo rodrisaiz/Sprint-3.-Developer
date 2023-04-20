@@ -16,6 +16,7 @@ $routes = array(
 	'/useredit' => 'user#edit',
 	'/userupdate' => 'user#update',
 	'/userdelete' => 'user#delete',
+	'/logout' => 'user#logout',
 
 );
 
