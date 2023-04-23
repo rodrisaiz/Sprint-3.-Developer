@@ -75,7 +75,7 @@ class Signup extends DB{
     {
         $result;
         
-        if(!preg_match(" /^[a-zA-Z-'\s]*$/ ", $this->uid)){
+        if(!preg_match(" /^[a-zA-Z-0-9'\s]*$/ ", $this->uid)){
 
             $result = false;
 

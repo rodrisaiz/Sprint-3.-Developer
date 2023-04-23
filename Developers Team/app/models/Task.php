@@ -37,6 +37,23 @@ class Task extends DB{
         return $result;
     }
 
+    private function wrongOrderDate()
+    {
+        $result;
+
+        if($_POST["start_date"] > $_POST["end_date"]){
+
+            $result = false;
+
+        } else{
+
+            $result = true;
+
+        }
+
+        return $result;
+    }
+
 
     public function writeTask($title, $description, $status, $start_date, $end_date)
     {
@@ -44,6 +61,10 @@ class Task extends DB{
         if($this->emotyInputs() == false){
 
             return header('Location:/web/createtask?error=emotyInputs&title='.$title.'&description='.$description.'&status='.$status.'');
+        
+        }elseif($this->wrongOrderDate() == false){
+
+            return header('Location:/web/createtask?error=wrongOrderDate&title='.$title.'&description='.$description.'&status='.$status.'&item='.$_GET['item'].'');
 
         }else{
 
@@ -115,7 +136,11 @@ class Task extends DB{
 
         if($this->emotyInputs() == false){
 
-            return header('Location:/web/taskedit?error=emotyInputs&title='.$title.'&description='.$description.'&status='.$status.'');
+            return header('Location:/web/taskedit?error=emotyInputs&title='.$title.'&description='.$description.'&status='.$status.'&item='.$_GET['item'].'');
+
+        }elseif($this->wrongOrderDate() == false){
+
+            return header('Location:/web/taskedit?error=wrongOrderDate&title='.$title.'&description='.$description.'&status='.$status.'&item='.$_GET['item'].'');
 
         }else{
 

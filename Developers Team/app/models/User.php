@@ -138,6 +138,12 @@ class User extends DB{
         return header('Location:/web');
     }
 
+    public function logoutUser()
+    {
+        session_destroy();
+        return header('Location:/web');
+    }
+
 
 }
     
