@@ -1,0 +1,186 @@
+[
+    {
+        "id_user": 0,
+        "userName": "Rodri",
+        "email": "rodri@rodri.com",
+        "pwd": "$2y$10$df6CHQsEZBwtkoIwrQ0qn.mmcgnhv3CG2k2c0lpI72WcFjcUWJzBC",
+        "tasks": [
+            {
+                "id_task": 0,
+                "title": "Aprobar a Rodri",
+                "description": "Poner un 10 a rodri, grande como una casa!!",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 1,
+                "title": "Prueba 2",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 2,
+                "title": "Prueba 3",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 3,
+                "title": "Prueba 4",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 4,
+                "title": "Prueba 5",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 5,
+                "title": "Prueba 6",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 6,
+                "title": "Prueba 7",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 7,
+                "title": "Prueba 8",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 8,
+                "title": "Prueba 9",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 9,
+                "title": "Prueba 10",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 10,
+                "title": "flor",
+                "description": "aprender a usar el iphone",
+                "status": "Started",
+                "start_date": "2023-04-04",
+                "end_date": "2023-04-12"
+            }
+        ]
+    },
+    {
+        "id_user": 1,
+        "userName": "rodri2",
+        "email": "rodri2@rodri.com",
+        "pwd": "$2y$10$QuMLunv1eHuf0aXgSWkcPevQQVmHhxcPdO3jmJwxqQFCFk8\/bpzGC",
+        "tasks": [
+            {
+                "id_task": 0,
+                "title": "Prueba 1",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 1,
+                "title": "Prueba 2",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 2,
+                "title": "Prueba 3",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 3,
+                "title": "Prueba 4",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 4,
+                "title": "Prueba 5",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 5,
+                "title": "Prueba 6",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 6,
+                "title": "Prueba 7",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 7,
+                "title": "Prueba 8",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 8,
+                "title": "Prueba 9",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            },
+            {
+                "id_task": 9,
+                "title": "Prueba 10",
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "status": "Started",
+                "start_date": "2023-04-12",
+                "end_date": "2023-04-22"
+            }
+        ]
+    }
+]

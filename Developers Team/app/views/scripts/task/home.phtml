@@ -1,0 +1,138 @@
+<?php include ROOT_PATH . '/app/views/layouts/header.php'; 
+
+$task = $this->_data["_data"];
+$countTask = count($task);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Home</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+<body>
+
+<section class="bg-gray-600 h-full min-h-screen">
+      <div class="relative overflow-x-auto shadow-md">
+      <table class="w-full text-sm text-left text-white">
+            <caption class="p-5 text-lg font-semibold text-left text-white bg-gray-900">
+                  Your tasks
+                  <p class="mt-1 text-sm font-normal text-gray-400">Here you can create new, see and edit your tasks</p>
+            </caption>
+
+            <thead class="text-xs uppercase bg-gray-800 text-gray-400 ">
+                  
+                  <th scope="col" class="px-6 py-3">
+                  Title
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                  Description
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                  Status
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                  Start date
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                  End date
+                  </th>
+                  <th scope="col" class="px-6  pl-3">
+                  <span class="sr-only">Edit</span>
+                  </th>
+                  
+            </thead>
+
+            <?php
+                  
+                  for ($i = 0; $i <= ($countTask - 1); $i++) {
+                  $contador = $i;
+                  ?>
+                  
+            <tbody>
+                  <tr class=" border-b bg-gray-900 border-gray-700">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+
+                        <?php echo $task[$i]["title"]; ?>
+                  </th>
+
+                  <td class="px-6 py-4 max-w-sm">
+                  
+                        <?php echo $task[$i]["description"]; ?>
+                  
+                  </td>
+
+                  <td class="px-6 py-4">
+
+                        <?php echo $task[$i]["status"]; ?>
+                  </td>
+
+                  <td class="px-6 py-4">
+
+                        <?php 
+                        $start =  $task[$i]['start_date'];
+                        $date = date('d-m-Y', strtotime($start));
+                        $start_date = str_replace( "-", "/", $date);
+                        
+                        echo $start_date; 
+                         ?>
+                  </td>
+
+                  <td class="px-6 py-4">
+                  
+                        <?php
+                        $end =  $task[$i]['end_date'];
+                        $date = date('d-m-Y', strtotime($end));
+                        $end_date = str_replace( "-", "/", $date);
+                        
+                        echo $end_date; 
+                        ?>
+                  </td>
+
+                  <td class="px-6 py-4 text-center max-w-min">
+                        
+                           
+                        <a href="/web/taskedit?item=<?php echo $contador; ?>" type="button" class=" inline-flex items-center border focus:ring-7 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center border-white text-white  hover:border-gray-600  hover:text-white hover:bg-gray-600 focus:ring-gay-900">
+                              <svg class="w-4 h-4 mr-1 -ml-1" fill="currentColor" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd"  d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" clip-rule="evenodd"></path></svg>
+                              Edit 
+                        </a>
+
+                       
+                        <a href="/web/taskdelete?item=<?php echo $contador; ?>" type="button" class=" inline-flex items-center border focus:ring-7 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center border-white text-white  hover:border-red-600  hover:text-white hover:bg-red-600 focus:ring-gay-900">
+                              <svg class="w-4 h-4 mr-1 -ml-1" fill="currentColor" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd"  d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                              Delete 
+                        </a>
+      <?php
+      }
+      ?>
+
+            </tbody>
+      </table>
+      </div>
+      </div>
+
+      <div class="flex justify-center items-center mt-20  pb-16 mr-[35px]">
+                  
+            <a href="/web/createtask" type="button" class=" inline-flex items-center border  focus:ring-7 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-gray-800 border-gray-800 text-white  hover:border-gray-700  hover:text-white hover:bg-gray-900 focus:ring-gay-900">
+                  <svg class="w-5 h-5 mr-1 -ml-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path clip-rule="evenodd" fill-rule="evenodd" d="M7.502 6h7.128A3.375 3.375 0 0118 9.375v9.375a3 3 0 003-3V6.108c0-1.505-1.125-2.811-2.664-2.94a48.972 48.972 0 00-.673-.05A3 3 0 0015 1.5h-1.5a3 3 0 00-2.663 1.618c-.225.015-.45.032-.673.05C8.662 3.295 7.554 4.542 7.502 6zM13.5 3A1.5 1.5 0 0012 4.5h4.5A1.5 1.5 0 0015 3h-1.5z"></path>
+                  <path clip-rule="evenodd" fill-rule="evenodd" d="M3 9.375C3 8.339 3.84 7.5 4.875 7.5h9.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 013 20.625V9.375zM6 12a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75V12zm2.25 0a.75.75 0 01.75-.75h3.75a.75.75 0 010 1.5H9a.75.75 0 01-.75-.75zM6 15a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75V15zm2.25 0a.75.75 0 01.75-.75h3.75a.75.75 0 010 1.5H9a.75.75 0 01-.75-.75zM6 18a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75V18zm2.25 0a.75.75 0 01.75-.75h3.75a.75.75 0 010 1.5H9a.75.75 0 01-.75-.75z"></path></svg>
+                  Add a a new task
+            </a>
+
+
+      </div>
+
+
+
+     
+</section>
+
+<?php include ROOT_PATH . '/app/views/layouts/footer.php'; ?>
+</body>
+</html>
