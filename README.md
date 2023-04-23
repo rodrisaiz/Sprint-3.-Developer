@@ -1,7 +1,5 @@
 # Sprint-3.-Developer
 
-
-# PHP initial Project
 Main structure of php project. Folders / files:
 - **app**
   - **controllers**
