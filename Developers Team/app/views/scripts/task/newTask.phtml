@@ -46,7 +46,7 @@
                   if(isset($_GET['description'])){
                     $description = $_GET['description'];
 
-                    echo '<textarea name="description" id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500" value="'.$title.'" placeholder="Write your task description here..."></textarea>';
+                    echo '<textarea name="description" id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500" value="'.$description.'" placeholder="Write your task description here...">'.$description.'</textarea>';
 
                   }else{
 
@@ -121,13 +121,30 @@
               </div>
 
               
-              <div date-rangepicker class="flex items-center">
+              <div class="flex items-center">
                 <div class="relative">
                 <label for="start_date" class="block mb-2 text-sm font-medium text-white">Start date</label>
-                  <div class="absolute inset-y-0 left-0 flex items-center pl-3  pointer-events-none">
+
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3  pointer-events-none">
                       <svg aria-hidden="true" class="w-5 h-5 text-gray-400 mt-7 ml-[128px]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
                   </div>
-                  <input name="start_date" id="start_date" type="date" class=" border  text-sm rounded-lg  block w-full pl-10 p-2.5  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Select date start">
+                 
+                    <?php
+
+                      if(isset($_GET['start_date'])){
+
+                        $start = $_GET['start_date'];
+
+                        echo '<input name="start_date" id="start_date" type="date" value="'.$start.'" class=" border  text-sm rounded-lg  block w-full pl-10 p-2.5  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"  placeholder=""'.$start.'"">';
+
+                      }else{
+
+                        echo '<input name="start_date" id="start_date" type="date" value="" class=" border  text-sm rounded-lg  block w-full pl-10 p-2.5  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"  placeholder="">';
+                      
+                      }
+      
+                    ?>
+
                 </div>
                 <span class="mx-4 text-white mt-7 ml-[15px]">to</span>
                 <div class="relative">
@@ -135,7 +152,24 @@
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3  pointer-events-none">
                       <svg aria-hidden="true" class="w-5 h-5 text-gray-400 mt-7 ml-[128px]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
                   </div>
-                  <input name="end_date" id="end_date" type="date" class=" border  text-sm rounded-lg  block w-full pl-10 p-2.5  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Select date start">
+                
+                    <?php
+
+                      if(isset($_GET['end_date'])){
+
+                        $end = $_GET['end_date'];
+
+                        echo '<input name="end_date" id="end_date" type="date" value="'.$end.'" class=" border  text-sm rounded-lg  block w-full pl-10 p-2.5  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"  placeholder=""'.$end.'"">';
+
+                      }else{
+
+                        echo '<input name="end_date" id="end_date" type="date" value="" class=" border  text-sm rounded-lg  block w-full pl-10 p-2.5  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"  placeholder="">';
+
+                      }
+
+                       
+                    ?>
+
                 </div>
               </div>
 

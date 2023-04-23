@@ -28,9 +28,17 @@ $task = $this->_data["_data"];
                   <label for="uid" class="block mb-2 text-sm font-medium text-white">Title</label>
                                   
                   <?php
+
+                  if(isset($_GET['title'])){
+                    $title = $_GET['title'];
                   
+                    echo '<input type="text" name="title" id="title" class=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500" value="'.$title.'" placeholder="Type the title of your task" >';
+                  
+                  }else{
+
                     echo '<input type="text" name="title" id="title" class=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500" value="'.$task['title'].'" placeholder="Type the title of your task" >';
 
+                  }
                   ?>
 
               </div>
@@ -38,9 +46,18 @@ $task = $this->_data["_data"];
               <div class="sm:col-span-2">
                   <label for="description" class="block mb-2 text-sm font-medium text-white">Description</label>               
                   <?php
+
+                  if(isset($_GET['description'])){
+                    $description = $_GET['description'];
+
+                    echo '<textarea name="description" id="description"    rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500" placeholder="Type the description of your task">'.$description.'</textarea>';
+                  
+
+                  }else{
                   
                     echo '<textarea name="description" id="description"    rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500" placeholder="Type the description of your task">'.$task['description'].'</textarea>';
-
+                  
+                  }
                   ?>
 
               </div>
@@ -51,7 +68,46 @@ $task = $this->_data["_data"];
               <label for="status" class="block mb-2 text-sm font-medium text-white">Select an status</label>
 
                 <?php
-  
+                   if(isset($_GET['status'])){
+                    $status = $_GET['status'];
+
+                    if($status ==  'Started'){
+
+                      echo '<select name="status" id="status" class=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500" value="">
+                                <option value="">--Please choose an option--</option>
+                                <option value="Started" selected="selected">Started</option>
+                                <option value="In progres">In progres</option>
+                                <option value="Done">Done</option>
+                            </select>';
+
+                    }elseif($status == "In progres"){
+
+                      echo '<select name="status" id="status" class=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500" value="">
+                                <option value="">--Please choose an option--</option>
+                                <option value="Started">Started</option>
+                                <option value="In progres" selected="selected">In progres</option>
+                                <option value="Done">Done</option>
+                            </select>';
+
+                    }elseif($status == "Done"){
+
+                      echo '<select name="status" id="status" class=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500" value="">
+                                <option value="">--Please choose an option--</option>
+                                <option value="Started">Started</option>
+                                <option value="In progres">In progres</option>
+                                <option value="Done" selected="selected">Done</option>
+                            </select>';
+                    }else{
+
+                      echo '<select name="status" id="status" class=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500" value="">
+                                <option value="">--Please choose an option--</option>
+                                <option value="Started">Started</option>
+                                <option value="In progres">In progres</option>
+                                <option value="Done">Done</option>
+                            </select>';
+                    }
+
+                  }else{
           
                     if($task['status'] ==  'Started'){
 
@@ -88,6 +144,7 @@ $task = $this->_data["_data"];
                                 <option value="Done">Done</option>
                             </select>';
                     }
+                  }
 
                 ?>
 
@@ -104,12 +161,22 @@ $task = $this->_data["_data"];
                  
                     <?php
 
+                      if(isset($_GET['start_date'])){
+
+                        $start = $_GET['start_date'];
+
+                        echo '<input name="start_date" id="start_date" type="date" value="'.$start.'" class=" border  text-sm rounded-lg  block w-full pl-10 p-2.5  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"  placeholder=""'.$start.'"">';
+
+                      }else{
+
                         $var =  $task['start_date'];
                         $date = str_replace('/', '-', $var);
                         $start_date = date('Y-m-d', strtotime($date));  
 
                         echo '<input name="start_date" id="start_date" type="date" value="'.$start_date.'" class=" border  text-sm rounded-lg  block w-full pl-10 p-2.5  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"  placeholder=""'.$task["start_date"].'"">';
                       
+                      }
+      
                     ?>
 
                 </div>
@@ -122,12 +189,23 @@ $task = $this->_data["_data"];
                 
                     <?php
 
+                      if(isset($_GET['end_date'])){
+
+                        $end = $_GET['end_date'];
+
+                        echo '<input name="end_date" id="end_date" type="date" value="'.$end.'" class=" border  text-sm rounded-lg  block w-full pl-10 p-2.5  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"  placeholder=""'.$end.'"">';
+
+                      }else{
+
                         $var =  $task['end_date'];
                         $date = str_replace('/', '-', $var);
                         $end_date = date('Y-m-d', strtotime($date));
 
                         echo '<input name="end_date" id="end_date" type="date" value="'.$end_date.'" class=" border  text-sm rounded-lg  block w-full pl-10 p-2.5  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"  placeholder=""'.$task["start_date"].'"">';
 
+                      }
+
+                       
                     ?>
 
                 </div>
