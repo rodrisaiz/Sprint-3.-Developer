@@ -60,11 +60,11 @@ class Task extends DB{
 
         if($this->emotyInputs() == false){
 
-            return header('Location:/web/createtask?error=emotyInputs&title='.$title.'&description='.$description.'&status='.$status.'');
-        
+            return header('Location:/web/createtask?error=emotyInputs&title='.$title.'&description='.$description.'&status='.$status.'&item='.$_GET['item'].'&start_date='.$start_date.'&end_date='.$end_date.'');
+
         }elseif($this->wrongOrderDate() == false){
 
-            return header('Location:/web/createtask?error=wrongOrderDate&title='.$title.'&description='.$description.'&status='.$status.'&item='.$_GET['item'].'');
+            return header('Location:/web/createtask?error=wrongOrderDate&title='.$title.'&description='.$description.'&status='.$status.'&item='.$_GET['item'].'&start_date='.$start_date.'&end_date='.$end_date.'');
 
         }else{
 
@@ -136,11 +136,11 @@ class Task extends DB{
 
         if($this->emotyInputs() == false){
 
-            return header('Location:/web/taskedit?error=emotyInputs&title='.$title.'&description='.$description.'&status='.$status.'&item='.$_GET['item'].'');
+            return header('Location:/web/taskedit?error=emotyInputs&title='.$title.'&description='.$description.'&status='.$status.'&item='.$_GET['item'].'&start_date='.$start_date.'&end_date='.$end_date.'');
 
         }elseif($this->wrongOrderDate() == false){
 
-            return header('Location:/web/taskedit?error=wrongOrderDate&title='.$title.'&description='.$description.'&status='.$status.'&item='.$_GET['item'].'');
+            return header('Location:/web/taskedit?error=emotyInputs&title='.$title.'&description='.$description.'&status='.$status.'&item='.$_GET['item'].'&start_date='.$start_date.'&end_date='.$end_date.'');
 
         }else{
 

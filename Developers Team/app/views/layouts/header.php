@@ -8,7 +8,7 @@
                 </div>  
                 <span class="self-center text-3xl  font-semibold whitespace-nowrap text-white">TO DO  </span>
             </a>
-            <a href="/web/home" class="text-white font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 hover:bg-gray-700 outline-none focus:ring-gray-800">Home</a>
+            <a href="/web/home" class="text-white font-medium rounded-lg text-xl px-4 lg:px-5 py-2 lg:py-2.5 mr-2 hover:bg-gray-700 outline-none focus:ring-gray-800">Home</a>
             <div class="flex items-center lg:order-2">
                 <a href="/web/useredit" class="text-white font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 hover:bg-gray-700 outline-none focus:ring-gray-800">Profile</a>
                 <a href="/web/logout" class="text-white font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 hover:bg-gray-700 outline-none focus:ring-gray-800">Logout</a>

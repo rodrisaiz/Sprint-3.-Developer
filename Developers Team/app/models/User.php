@@ -34,75 +34,97 @@ class User extends DB{
         return $result;
     }
 
+    private function emotyInputs()
+    {
+        $result;
+
+        if(empty($_POST["uid"]) || empty($_POST["email"])){
+            $result = false;
+
+        } else{
+
+            $result = true;
+
+        }
+
+        return $result;
+    }
+
+
 
     public function updateUser($uid, $pwd, $pwdrepeat, $email)
     {
+        if($this->emotyInputs() == false){
 
-        $user = array();
-        $id_user = 2;
-        $tasks = array(); 
+            return header('Location:/web/useredit?error=emotyInputs&uid='.$uid.'&email='.$email.'');
 
-        $counter = -1 ;
-        $id =  $_SESSION["id"];
+        }else{
 
-        $decoded_json = $this->read();
+            $user = array();
+            $id_user = 2;
+            $tasks = array(); 
 
-        foreach($decoded_json as $oneUser){
+            $counter = -1 ;
+            $id =  $_SESSION["id"];
 
-            if( $oneUser['id_user'] == $id){
+            $decoded_json = $this->read();
 
-                $id_user = $oneUser['id_user'];
+            foreach($decoded_json as $oneUser){
 
-                $tasks = $oneUser['tasks'];
+                if( $oneUser['id_user'] == $id){
 
+                    $id_user = $oneUser['id_user'];
+
+                    $tasks = $oneUser['tasks'];
+
+                }
             }
-        }
 
-        foreach($this->read() as $user){
+            foreach($this->read() as $user){
 
-            $counter ++;
+                $counter ++;
 
-            if( $user['id_user'] == $id){
+                if( $user['id_user'] == $id){
 
-                if(!isset($pwd)){
+                    if(!isset($pwd)){
 
-                    $pwd = $user['pwd'];
+                        $pwd = $user['pwd'];
 
-                }elseif(!isset($pwdrepeat)){
+                    }elseif(!isset($pwdrepeat)){
 
-                    $pwdrepeat = $user['pwd'];
-                }
+                        $pwdrepeat = $user['pwd'];
+                    }
 
-                if($this->pwdMatch($pwd, $pwdrepeat) == false){
+                    if($this->pwdMatch($pwd, $pwdrepeat) == false){
 
-                    return header('Location:/web/useredit?error=pwdMatch&uid='.$uid.'&email='.$email.'');
-                }else{
+                        return header('Location:/web/useredit?error=pwdMatch&uid='.$uid.'&email='.$email.'');
+                    }else{
 
-                    $pwd = password_hash($pwd, PASSWORD_BCRYPT);
-                }
+                        $pwd = password_hash($pwd, PASSWORD_BCRYPT);
+                    }
 
-                $decoded_json = $this->read();
+                    $decoded_json = $this->read();
 
-                $user = array(
-        
-                    'id_user' => $id_user,
-                    'userName' => $uid,
-                    'email' => $email,
-                    'pwd' => $pwd,
-                    'tasks' => $tasks,
-                    
-                    );
+                    $user = array(
             
-                $decoded_json[$counter] = $user;
+                        'id_user' => $id_user,
+                        'userName' => $uid,
+                        'email' => $email,
+                        'pwd' => $pwd,
+                        'tasks' => $tasks,
+                        
+                        );
                 
-                $write = $this->write($decoded_json);
+                    $decoded_json[$counter] = $user;
+                    
+                    $write = $this->write($decoded_json);
 
-                return header('Location:/web/home');
+                    return header('Location:/web/home');
 
+                }
             }
         }
     }
-
 
 
     public function deleteUser()
